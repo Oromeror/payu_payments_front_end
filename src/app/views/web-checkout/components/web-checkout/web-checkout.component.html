@@ -85,11 +85,11 @@
             Generate
           </button>
         </mat-card-actions>
-        <div class = "hash-response">
-        <li *ngFor="let signature of signatures">
-          {{ signature.hashType }} : {{ signature.hash }}
-        </li>
-      </div>
+        <div class="hash-response">
+          <li *ngFor="let signature of signatures">
+            {{ signature.hashType }} : {{ signature.hash }}
+          </li>
+        </div>
       </mat-card-content>
     </mat-card>
   </form>
@@ -98,7 +98,7 @@
 <div>
   <form
     [formGroup]="webCheckoutForm"
-    (ngSubmit)="createTestTransaction($event)"
+    (ngSubmit)="createTransaction($event)"
   >
     <mat-card>
       <mat-card-header>
