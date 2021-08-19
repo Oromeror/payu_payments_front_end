@@ -8,7 +8,7 @@ import { WebCheckoutTransaction } from 'src/app/core/model/wc-transaction.model'
 
 import { WebCheckoutService } from 'src/app/core/services/web-checkout.service';
 
-import {Md5} from "md5-typescript";
+import { Md5 } from "md5-typescript";
 import * as shajs from 'sha.js';
 
 @Component({
@@ -20,7 +20,8 @@ export class WebCheckoutComponent implements OnInit {
 
   signatureForm: FormGroup;
   webCheckoutForm: FormGroup;
-  signatures: {hashType: string, hash: string} [] = [];
+  test: boolean;
+  signatures: { hashType: string, hash: string }[] = [];
 
   pricePattern = '^[0-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*$';
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
@@ -67,7 +68,72 @@ export class WebCheckoutComponent implements OnInit {
     });
   }
 
-  createTestTransaction(event: Event) {
+  createSignature(event: Event) {
+    event.preventDefault();
+    if (this.signatureForm.valid) {
+      const value = this.signatureForm.value;
+      const nonEncryptedSignature = value.apiKey + "~" + value.merchantId + "~" + value.referenceCode + "~" + value.amount + "~" + value.currency;
+      const wcSignature: WebCheckoutSignature = {
+        apiKey: value.apiKey,
+        merchantId: value.merchantId,
+        referenceCode: value.referenceCode,
+        amount: value.amount,
+        currency: value.currency
+      }
+      console.log(wcSignature);
+
+      this.signatures = [
+        { hashType: 'non-encrypted', hash: nonEncryptedSignature },
+        { hashType: 'MD5', hash: this.generateMD5Signature(nonEncryptedSignature) },
+        { hashType: 'SHA1', hash: this.generateSHA1Signature(nonEncryptedSignature) },
+        { hashType: 'SHA256', hash: this.generateSHA256Signature(nonEncryptedSignature) },
+      ]
+    }
+  }
+
+  generateMD5Signature(signature: string) {
+    return Md5.init(signature);
+  }
+
+  generateSHA1Signature(signature: string) {
+    const data = signature;
+    const sha1Signature = shajs('sha1').update(data).digest('hex');
+    return sha1Signature;
+  }
+
+  generateSHA256Signature(signature: string) {
+    const data = signature;
+    const sha256Signature = shajs('sha256').update(data).digest('hex');
+    return sha256Signature;
+  }
+
+  generateTestTrx(newTransaction: WebCheckoutTransaction) {
+    this.wcService.createTestTransaction(newTransaction).subscribe(
+      (response: any) => {
+        this.snackBar.open('Transacción creada exitosamente', 'cerrar', { duration: 5000 });
+        console.log(response);
+        //this.router.navigate(['/home']);
+      },
+      (error: any) => {
+        this.snackBar.open('Ha ocurrido un error inesperado.', 'cerrar', { duration: 5000 });
+      }
+    );
+  }
+
+  generateProdTrx(newTransaction: WebCheckoutTransaction) {
+    this.wcService.createProdTransaction(newTransaction).subscribe(
+      (response: any) => {
+        this.snackBar.open('Transacción creada exitosamente', 'cerrar', { duration: 5000 });
+        console.log(response);
+        //this.router.navigate(['/home']);
+      },
+      (error: any) => {
+        this.snackBar.open('Ha ocurrido un error inesperado.', 'cerrar', { duration: 5000 });
+      }
+    );
+  }
+
+  createTransaction(event: Event) {
     event.preventDefault();
     if (this.webCheckoutForm.valid) {
       const value = this.webCheckoutForm.value;
@@ -86,55 +152,13 @@ export class WebCheckoutComponent implements OnInit {
         responseUrl: value.responseUrl,
         confirmationUrl: value.confirmationUrl
       };
-      this.wcService.createTestTransaction(newTransaction).subscribe(
-        (response: any) => {
-          this.snackBar.open('Transacción creada exitosamente', 'cerrar', { duration: 5000 });
-          console.log(response);
-          //this.router.navigate(['/home']);
-        },
-        (error: any) => {
-          this.snackBar.open('Ha ocurrido un error inesperado.', 'cerrar', { duration: 5000 });
-        }
-      );
-    }
-  }
-
-  createSignature(event: Event) {
-    event.preventDefault();
-    if (this.signatureForm.valid) {
-      const value = this.signatureForm.value;
-      const nonEncryptedSignature = value.apiKey + "~" + value.merchantId + "~" + value.referenceCode + "~" + value.amount + "~" + value.currency;
-      const wcSignature: WebCheckoutSignature = {
-        apiKey: value.apiKey,
-        merchantId: value.merchantId,
-        referenceCode: value.referenceCode,
-        amount: value.amount,
-        currency: value.currency
+      if (newTransaction.test == 1) {
+        console.log('calling test service')
+        this.generateTestTrx(newTransaction);
+      } else {
+        console.log('calling prod service')
+        this.generateProdTrx(newTransaction);
       }
-      console.log(wcSignature);
-      
-      this.signatures = [
-        {hashType: 'non-encrypted', hash: nonEncryptedSignature},
-        {hashType: 'MD5', hash: this.generateMD5Signature(nonEncryptedSignature)},
-        {hashType: 'SHA1', hash: this.generateSHA1Signature(nonEncryptedSignature)},
-        {hashType: 'SHA256', hash: this.generateSHA256Signature(nonEncryptedSignature)},
-      ]    
     }
-  }
-
-  generateMD5Signature(signature: string){
-    return Md5.init(signature);
-  }
-
-  generateSHA1Signature(signature: string){
-    const data = signature; 
-    const sha1Signature = shajs('sha1').update(data).digest('hex');
-    return sha1Signature;
-  }
-
-  generateSHA256Signature(signature: string){
-    const data = signature; 
-    const sha256Signature = shajs('sha256').update(data).digest('hex');
-    return sha256Signature;
   }
 }
