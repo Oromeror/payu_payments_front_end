@@ -1,0 +1,11 @@
+<div class="main-container">
+      <div class="options-list">
+      <mat-select placeholder="Test Options" type="number" list="urls">
+        <mat-option *ngFor="let url of urls">
+          <div class="urls" (click)="navigate(url.url)">
+            {{ url.name }}
+          </div>
+        </mat-option>
+      </mat-select>
+    </div>
+</div>

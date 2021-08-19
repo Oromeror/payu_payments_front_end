@@ -1,0 +1,40 @@
+<head>
+  <title>Secure Fields Form</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="checkout-page">
+    <form id="payment-form">
+      <div class="field">
+        <div>
+          <i class="fas fa-user-alt"></i>
+        </div>
+        <input
+          id="cardholder-name"
+          class="input-empty"
+          placeholder="John Doe"
+        />
+      </div>
+
+      <div class="field">
+        <div>
+          <i class="far fa-credit-card"></i>
+        </div>
+        <div id="card-number" class="input-empty"></div>
+      </div>
+
+      <div class="field">
+        <div>
+          <i class="far fa-calendar-alt"></i>
+        </div>
+        <div id="exp-date" class="input-empty"></div>
+      </div>
+      <div>
+        <button class="btn" type="submit" id="pay_button">Pay</button>
+      </div>
+      <br />
+    </form>
+  </div>
+</body>

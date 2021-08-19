@@ -1,0 +1,27 @@
+.main-container {
+    margin: 0 auto;
+    max-width: 480px;
+    background-color: #F5F5F7;
+    border: 1px solid #ddd;
+    padding: 20px;
+    display: block;
+    width: 80%;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    place-content: center;
+  }
+  .urls {
+    margin: 0 0.5em;
+    color: skyblue;
+    padding: 5px;
+    font-size: medium;
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+  .urls:hover {
+    cursor: pointer;
+  }
+
+ 
+  
