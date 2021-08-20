@@ -108,11 +108,14 @@ export class WebCheckoutComponent implements OnInit {
   }
 
   generateTestTrx(newTransaction: WebCheckoutTransaction) {
+
+    console.log('calling Test service')
+
     this.wcService.createTestTransaction(newTransaction).subscribe(
       (response: any) => {
+        console.log(response.headers.get('Location'));
         this.snackBar.open('Transacción creada exitosamente', 'cerrar', { duration: 5000 });
         console.log(response);
-        //this.router.navigate(['/home']);
       },
       (error: any) => {
         this.snackBar.open('Ha ocurrido un error inesperado.', 'cerrar', { duration: 5000 });
@@ -121,6 +124,9 @@ export class WebCheckoutComponent implements OnInit {
   }
 
   generateProdTrx(newTransaction: WebCheckoutTransaction) {
+
+    console.log('calling Prod service')
+
     this.wcService.createProdTransaction(newTransaction).subscribe(
       (response: any) => {
         this.snackBar.open('Transacción creada exitosamente', 'cerrar', { duration: 5000 });
@@ -153,12 +159,12 @@ export class WebCheckoutComponent implements OnInit {
         confirmationUrl: value.confirmationUrl
       };
       if (newTransaction.test == 1) {
-        console.log('calling test service')
         this.generateTestTrx(newTransaction);
       } else {
-        console.log('calling prod service')
         this.generateProdTrx(newTransaction);
       }
     }
   }
 }
+
+
