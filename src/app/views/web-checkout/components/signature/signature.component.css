@@ -18,11 +18,8 @@ body {
 }
 
 mat-card {
-    padding: 2em;
+    padding: 1em;
     width: min-content;
-}
-
-mat-card {
     color: skyblue;
     background-color: white;
     display: flex;
@@ -59,36 +56,30 @@ mat-card-header {
 }
 
 mat-form-field {
-    width: 35vw;
+    width: 50vw;
     color: black;
 }
 
 button {
-    background-color: mat-color(primary);
-    color: mat-color(foreground);
+    color: white;
+    background-color: skyblue;
 }
 
 @media only screen and (max-width: 600px) {
 
 form {
     position: relative;
-    width: 100vw;
-    height: 30vh;
-    position: relative;
-    bottom: 20vh;
 }
 
 button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70vw;
     position: relative;
-    bottom: 20vh;
 }
 
 span {
-    display: none;    
+    display: none;
     }
 }
 
@@ -115,4 +106,18 @@ span {
     visibility: hidden;
     height: 0;
     width: 0;
+}
+
+mat-list {
+    word-break: break-word;
+    width: 50vw;
+    color: black;
+}
+
+.mat-list-item mat-focus-indicator ng-star-inserted {
+  height: fit-content;
+}
+
+.mat-list-item-content{
+  height: min-content;
 }

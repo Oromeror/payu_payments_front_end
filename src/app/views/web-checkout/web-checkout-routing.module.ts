@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WebCheckoutComponent } from './components/web-checkout/web-checkout.component';
+import { WebCheckoutComponent } from './web-checkout/web-checkout.component';
 
 const routes: Routes = [
   {

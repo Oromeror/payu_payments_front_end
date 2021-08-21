@@ -1,0 +1,394 @@
+<form
+  ngNoForm
+  method="post"
+  action="https://checkout.payulatam.com/ppp-web-gateway-payu/"
+>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Create Transaction</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-subtitle>Buyer Fields </mat-card-subtitle>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Buyer full name</mat-label>
+        <input
+          matInput
+          placeholder="Buyer full name"
+          name="buyerFullName"
+          type="text"
+          value=""
+          required
+        />
+        <mat-error>Buyer full name<strong> required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Buyer email</mat-label>
+        <input
+          placeholder="Buyer email"
+          name="buyerEmail"
+          required
+          [pattern]="emailPattern"
+          matInput
+          type="email"
+          value=""
+        />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error>Buyer email is <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Shipping address</mat-label>
+        <input
+          placeholder="The delivery address of the merchandise"
+          name="shippingAddress"
+          required
+          matInput
+          type="text"
+          value=""
+        />
+        <mat-error>Shipping address <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Shipping city</mat-label>
+        <input
+          placeholder="The delivery City of the merchandise"
+          name="shippingCity"
+          required
+          matInput
+          type="text"
+          value=""
+        />
+        <mat-error>Shipping city <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Billing address</mat-label>
+        <input
+          placeholder="Correspondence address"
+          name="billingAddress"
+          required
+          matInput
+          type="text"
+          value=""
+        />
+        <mat-error>Billing address <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Billing city</mat-label>
+        <input
+          placeholder="City associated with the billing address"
+          name="billingCity"
+          required
+          matInput
+          type="text"
+          value=""
+        />
+        <mat-error>Billing city <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Telephone</mat-label>
+        <input
+          placeholder="Buyer’s residence phone"
+          name="telephone"
+          required
+          matInput
+          type="text"
+          value=""
+        />
+        <mat-error>Telephone <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile phone</mat-label>
+        <input
+          placeholder="Buyer’s cell phone number"
+          name="mobilePhone"
+          required
+          matInput
+          type="text"
+          value=""
+        />
+        <mat-error>Mobile phone <strong>required.</strong> </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-subtitle> Payer Fields </mat-card-subtitle>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Payer full name</mat-label>
+        <input
+          matInput
+          placeholder="Payer full name"
+          name="payerFullName"
+          type="text"
+          value=""
+          required
+        />
+        <mat-error> Payer full name is <strong> required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Payer email</mat-label>
+        <input
+          placeholder="Payer email"
+          name="payerEmail"
+          required
+          matInput
+          [pattern]="emailPattern"
+          matInput
+          type="email"
+          value=""
+        />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error>Payer email is <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Document</mat-label>
+        <input
+          placeholder="Buyer’s identification number"
+          name="payerDocument"
+          required
+          matInput
+          type="text"
+          value=""
+        />
+        <mat-error>Document is <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Telephone</mat-label>
+        <input
+          placeholder="Payer’s phone number"
+          name="payerPhone"
+          required
+          matInput
+          type="text"
+          value=""
+        />
+        <mat-error>Telephone <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile phone</mat-label>
+        <input
+          placeholder="Payer’s mobile phone number"
+          name="payerMobilePhone"
+          required
+          matInput
+          type="text"
+          value=""
+        />
+        <mat-error>Mobile phone <strong>required.</strong> </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-subtitle> Transaction Fields </mat-card-subtitle>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Merchant id</mat-label>
+        <input
+          matInput
+          placeholder="Merchant id"
+          name="merchantId"
+          type="text"
+          value=""
+          required
+        />
+        <mat-error> Merchant id is<strong> required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Account id</mat-label>
+        <input
+          matInput
+          placeholder="Account id"
+          name="accountId"
+          type="text"
+          value=""
+          required
+        />
+        <mat-error> Account id is <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input
+          matInput
+          placeholder="Description"
+          name="description"
+          type="text"
+          value=""
+          required
+        />
+        <mat-error> Description is <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Reference code</mat-label>
+        <input
+          matInput
+          placeholder="Reference code"
+          name="referenceCode"
+          type="text"
+          value=""
+          required
+        />
+        <mat-error> Reference code is <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input
+          matInput
+          placeholder="Amount"
+          name="amount"
+          [pattern]="pricePattern"
+          required
+          type="number"
+          value="0"
+          min="0"
+        />
+        <span class="currency-icon" matPrefix>$&nbsp;</span>
+        <mat-error> ¡The amount mus be <strong>valid.</strong>! </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Tax</mat-label>
+        <input
+          matInput
+          placeholder="Tax"
+          name="tax"
+          [pattern]="pricePattern"
+          required
+          type="number"
+          value="0"
+          min="0"
+        />
+        <span class="currency-icon" matPrefix>$&nbsp;</span>
+        <mat-error> ¡The tax mus be <strong>valid.</strong>! </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Tax Return Base</mat-label>
+        <input
+          matInput
+          placeholder="Tax Return Base"
+          name="taxReturnBase"
+          [pattern]="pricePattern"
+          required
+          type="number"
+          value="0"
+          min="0"
+        />
+        <span class="currency-icon" matPrefix>$&nbsp;</span>
+        <mat-error>
+          ¡The tax return base mus be <strong>valid.</strong>!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Currency</mat-label>
+        <mat-select
+          disableRipple
+          placeholder="Currency"
+          name="currency"
+          type="text"
+        >
+          <mat-option value="ARS">ARS</mat-option>
+          <mat-option value="BRL">BRL</mat-option>
+          <mat-option value="CLP">CLP</mat-option>
+          <mat-option value="COP">COP</mat-option>
+          <mat-option value="MXN">MXN</mat-option>
+          <mat-option value="PEN">PEN</mat-option>
+          <mat-option value="USD">USD</mat-option>
+        </mat-select>
+        <mat-error> Currency is <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Algorithm signature</mat-label>
+        <mat-select
+          disableRipple
+          placeholder="Algorithm signature"
+          name="algorithmSignature"
+          type="text"
+        >
+          <mat-option value="MD5">MD5</mat-option>
+          <mat-option value="SHA1">SHA1</mat-option>
+          <mat-option value="SHA256">SHA256</mat-option>
+        </mat-select>
+        <mat-error
+          >Algorithm signature is <strong>required.</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Signature</mat-label>
+        <input
+          matInput
+          placeholder="Signature"
+          name="signature"
+          type="text"
+          value=""
+          required
+        />
+        <mat-error> Signature is <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Test cards</mat-label>
+        <mat-select
+          disableRipple
+          placeholder="Test cards"
+          name="test"
+          type="number"
+        >
+          <mat-option value="1">1: Enable test credit cards</mat-option>
+          <mat-option value="0">0: Disable test credit cards</mat-option>
+        </mat-select>
+        <mat-error>Test cards is <strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Response url</mat-label>
+        <input
+          matInput
+          placeholder="Response url"
+          name="responseUrl"
+          type="text"
+          value=""
+          required
+        />
+        <mat-error> Response url is<strong>required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Confirmation url</mat-label>
+        <input
+          matInput
+          placeholder="Confirmation url"
+          name="confirmationUrl"
+          type="text"
+          value=""
+          required
+        />
+        <mat-error> Confirmation url is<strong>required.</strong> </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button name="Submit" type="submit" value="Enviar">
+        Send
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

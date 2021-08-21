@@ -5,11 +5,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './../material/material.module';
 
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     RouterModule,
@@ -18,7 +20,8 @@ import { HeaderComponent } from './components/header/header.component';
     ReactiveFormsModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

@@ -7,12 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
+
   options: any[] = [];
-  
-  urls: {name: string, url: string} [] = [
-    {name: 'Simple Secure Fields Form', url: 'checkout/secure-fields-form'},
-    {name: 'Web Checkout PayU', url: '/web-checkout'}
+
+  urls: { name: string, url: string }[] = [
+    { name: 'Simple Secure Fields Form - PaymentsOS', url: 'checkout/secure-fields-form' },
+    { name: 'Web Checkout - PayU', url: '/web-checkout' }
   ];
 
   constructor(

@@ -1,0 +1,52 @@
+.footer-layoud{
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color:#00263A;
+}
+
+footer {
+  bottom: 0;
+  padding: 10px 0px;
+  margin-top: 20px;
+  position: sticky;
+}
+
+body{
+  margin: 0;
+}
+
+.iconify { width: 28px; height: 28px; }
+
+
+span {
+  color: gray;
+  font-size: 1rem;
+}
+
+.footer-grid{
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+}
+
+.footer-list{
+  display: flex;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa {
+  padding: 15px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+.fa-github {
+  color: white;
+}
