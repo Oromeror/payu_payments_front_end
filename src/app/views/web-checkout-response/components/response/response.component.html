@@ -1,0 +1,15 @@
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Transaction Response</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let response of responses">
+          <span style="font-weight: bold"> {{ response.fieldName }} </span>
+          : {{ response.fieldValue }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

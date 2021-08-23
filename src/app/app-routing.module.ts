@@ -24,6 +24,10 @@ const routes: Routes = [
       {
         path: 'web-checkout',
         loadChildren: () => import('./views/web-checkout/web-checkout-routing.module').then(m => m.WebCheckoutRoutingModule)
+      },
+      {
+        path: 'web-checkout-response',
+        loadChildren: () => import('./views/web-checkout-response/web-checkout-response.module').then(m => m.WebCheckoutResponseModule)
       }
     ]
   },

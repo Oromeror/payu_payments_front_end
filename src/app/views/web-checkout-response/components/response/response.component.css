@@ -6,6 +6,11 @@
 
 div {
     padding: 0.5em;
+    text-align: -webkit-center;
+}
+
+body {
+    background: whitesmoke;
 }
 
 .mat-list-item-content {
@@ -15,15 +20,6 @@ div {
 .no-wrap {
     word-wrap: break-word;
     white-space: pre-wrap;
-}
-
-form {
-    background-color: none;
-    text-align: -webkit-center;
-}
-
-body {
-    background: whitesmoke;
 }
 
 mat-card {
@@ -64,28 +60,8 @@ mat-card-header {
     flex-direction: column;
 }
 
-mat-form-field {
-    width: 50vw;
-    color: black;
-}
-
-button {
-    color: white;
-    background-color: skyblue;
-}
-
 @media only screen and (max-width: 600px) {
 
-form {
-    position: relative;
-}
-
-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
 
 span {
     display: none;

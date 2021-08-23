@@ -4,8 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 //import { Router } from '@angular/router';
 
 import { WebCheckoutTransaction } from 'src/app/core/model/wc-transaction.model';
+import { WebCheckoutService } from 'src/app/core/services/web-checkout/web-checkout.service';
 
-import { WebCheckoutService } from 'src/app/core/services/web-checkout.service';
 
 @Component({
   selector: 'app-payment-form',

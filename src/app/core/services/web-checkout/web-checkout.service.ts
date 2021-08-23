@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 
-import { WebCheckoutTransaction } from './../model/wc-transaction.model'
-import { environment } from 'src/environments/environment';
+import { WebCheckoutTransaction } from '../../model/wc-transaction.model'
+import { environment } from '../../../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({

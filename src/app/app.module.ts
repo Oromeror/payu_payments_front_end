@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material/material.module';
 import { WebCheckoutModule } from './views/web-checkout/web-checkout.module';
+import { WebCheckoutResponseModule } from './views/web-checkout-response/web-checkout-response.module';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { WebCheckoutModule } from './views/web-checkout/web-checkout.module';
     HttpClientModule,
     SharedModule,
     WebCheckoutModule,
+    WebCheckoutResponseModule,
     MaterialModule
   ],
   providers: [],
