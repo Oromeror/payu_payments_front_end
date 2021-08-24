@@ -12,12 +12,14 @@ import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material/material.module';
 import { WebCheckoutModule } from './views/web-checkout/web-checkout.module';
 import { WebCheckoutResponseModule } from './views/web-checkout-response/web-checkout-response.module';
+import { ConfirmationComponent } from './views/web-checkout-confirmation/components/confirmation/confirmation.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,
