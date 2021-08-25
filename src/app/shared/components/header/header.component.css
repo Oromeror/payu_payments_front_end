@@ -1,7 +1,6 @@
 
 mat-toolbar {
     background-color: mat-color(primary, Light);
-    margin-bottom: 20px !important;
   }
 
   mat-toolbar-row {

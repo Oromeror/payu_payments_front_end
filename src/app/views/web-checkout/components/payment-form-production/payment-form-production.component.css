@@ -1,32 +1,28 @@
+.prod-form-div{
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0.5em;
+  position: relative;
+}
+
 :host {
     display: start;
     justify-content: center;
     align-items: flex-start;
 }
 
-div {
-    padding: 0.5em;
-}
-
-form {
-    background-color: none;
-    text-align: -webkit-center;
-}
-
-body {
-    background: whitesmoke;
-}
-
 mat-card {
-    padding: 1em;
-    width: min-content;
-    color: skyblue;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+  padding: 1em;
+  margin-bottom: 1em;
+  width: min-content;
+  color: skyblue;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  }
 
 mat-card-content {
     display: flex;
@@ -64,16 +60,22 @@ mat-form-field {
     color: black;
 }
 
+.mat-card>.mat-card-actions:last-child {
+    margin-bottom: 0px;
+    padding-bottom: 0;
+}
+
 button {
     color: white;
     background-color: skyblue;
 }
 
-@media only screen and (max-width: 600px) {
+
+
 
 form {
-    position: relative;
-    padding: 0.5em;
+    background-color: none;
+    text-align: -webkit-center;
 }
 
 button {
@@ -85,12 +87,12 @@ button {
 
 span {
     display: none;
-    }
 }
 
-.currency-icon {
+    .currency-icon {
     vertical-align: super;
 }
+
 .hash-response {
     text-align: left;
 }

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentFormSandboxComponent implements OnInit {
 
-  pricePattern = '^[0-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*$';
+  pricePattern = '^[0-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[.][1-9][0-9]*$';
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
 
   constructor() { }

@@ -1,15 +1,21 @@
-.footer-layoud{
+footer {
+  padding: 2px 0px;
   right: 0;
   left: 0;
   bottom: 0;
-  background-color:#00263A;
+  width:100%;
+  flex-flow: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color:black;
+
 }
 
-footer {
-  bottom: 0;
-  padding: 10px 0px;
-  margin-top: 20px;
-  position: sticky;
+a {
+  padding: 0.2%;
+  color: saddlebrown;
 }
 
 body{
@@ -33,14 +39,10 @@ span {
   display: flex;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .fa {
-  padding: 15px;
+  padding: 5px;
   font-size: 30px;
   text-align: center;
   text-decoration: none;

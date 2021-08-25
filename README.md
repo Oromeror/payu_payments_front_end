@@ -1,27 +1,37 @@
-# Payments
+# Payments-1001
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1. and making use of [Firebase](https://firebase.google.com/)
 
-## Development server
+This repository is based on the implementation of a simple API for the PayU [WebCheckout integration](http://developers.payulatam.com/latam/en/docs/integrations/webcheckout-integration.html).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+- download packages and it's dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    `npm install`
+
+## Execution
+
+Run `npm run ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run `ng serve --ssl` for a dev server. Navigate to `https://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Deployment
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- You will need to create a project in firebase, you can read the firebase quick start [documentation](https://firebase.google.com/docs/hosting/quickstart) for further assistance.
 
-## Running end-to-end tests
+    To install firebase
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    `npm install firebase @angular/fire`
 
-## Further help
+    To iniciate firebase
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    `firebase init` you have to select the project that you created and select the hosting feature option provided by firebase. It will also ask you for the public directory, you only have to type the `dist/` directory, then select configure as a sinple-page app.
+
+    To deploy
+
+    `firebase deploy`

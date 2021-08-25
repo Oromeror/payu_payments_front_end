@@ -14,7 +14,7 @@ import * as shajs from 'sha.js';
 export class SignatureComponent implements OnInit {
 
   signatureForm: FormGroup;
-  pricePattern = '^[0-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*$';
+  pricePattern = '^[0-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[.][1-9][0-9]*$';
   signatures: { hashType: string, hash: string }[] = [];
 
   constructor(
