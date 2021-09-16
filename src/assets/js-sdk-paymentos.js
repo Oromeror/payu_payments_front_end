@@ -5,9 +5,9 @@ Create an instance of the secure fields. Pass the public key as the first argume
 As the second argument, we'll pass a list of custom fonts to be applied to the fields (this is optional).
 */
 
-function initPaymentOSSdk() {
+function initPaymentsOsSecureFormFieldsJsSdk() {
 
-  console.log("PaymentOS Jacascript OS called");
+  console.log("PaymentOS Javascript SDK called");
 
   const fonts = [{ src: 'https://fonts.googleapis.com/css?family=Source+Code+Pro', }]
 
@@ -29,10 +29,10 @@ function initPaymentOSSdk() {
 
   const style = {
     base: {
-      color: '#fff',
+      color: '#000',
       fontWeight: 600,
       fontFamily: 'Quicksand, Open Sans, Segoe UI, sans-serif',
-      fontSize: '16px',
+      fontSize: '15px',
       fontSmoothing: 'antialiased',
       ':focus': {
         color: '#424770',
@@ -68,14 +68,8 @@ function initPaymentOSSdk() {
   const expiry = formElements.create('creditCardExpiry', { placeholders })
   expiry.mount('#exp-date')
 
-
-  cardNumber.on('change', (event) => {
-    console.log(event)
-  })
-
-  cardNumber.on('focus', (event) => {
-    console.log(event)
-  })
+  const cvv = formElements.create('cvv', { placeholders })
+  cvv.mount('#cvv')
 
   cardNumber.on('blur', (event) => {
     console.log(event)
@@ -85,12 +79,12 @@ function initPaymentOSSdk() {
   Create a token when the user submits the form, but not until we fetched the card holder's name
   so that we can pass it in an additional data object to the createToken call.
   */
+
   document.getElementById('payment-form').addEventListener('submit', async (event) => {
     event.preventDefault()
     const additionalData = { holder_name: document.getElementById('cardholder-name').value }
     const result = await POS.createToken(cardNumber, { additionalData, environment: 'test' })
-    alert(`The response is ${JSON.stringify(result)}`);
-    console.log(`The response is ${JSON.stringify(result)}`)
+    console.log(`Response ${JSON.stringify(result)}`)
+    alert(`Response ${JSON.stringify(result)}`);
   })
-
 }

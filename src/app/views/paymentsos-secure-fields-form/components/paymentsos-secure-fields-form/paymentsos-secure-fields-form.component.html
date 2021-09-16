@@ -1,0 +1,55 @@
+<div class="secure-fields-form-div">
+
+  <form id="payment-form"
+        [formGroup]="secureFieldsForm"
+        (ngSubmit)="createToken($event)">
+
+    <mat-card>
+
+      <mat-card-header>
+        <mat-card-title>Secure Fields Form</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+          <mat-label>Card holder name</mat-label>
+          <input
+            id="cardholder-name"
+            formControlName="cardholderName"
+            class="input-empty"
+            placeholder="John Doe"
+            matInput
+            type="text"
+            required
+          />
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error> Card holder name is <strong> required.</strong> </mat-error>
+        </mat-form-field>
+
+        <div class="field">
+          <div id="card-number" class="input empty"></div>
+        </div>
+
+        <div class="field">
+          <div id="exp-date" class="input empty"></div>
+        </div>
+
+        <div class="field">
+          <div id="cvv" class="input empty"></div>
+        </div>
+
+        <mat-card-actions>
+          <button
+            [disabled]="secureFieldsForm.invalid"
+            class="btn"
+            id="pay_button"
+            mat-raised-button
+            type="submit"
+          >
+            Pay
+          </button>
+        </mat-card-actions>
+        </mat-card-content>
+        </mat-card>
+    </form>
+</div>

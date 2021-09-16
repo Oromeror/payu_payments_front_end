@@ -28,9 +28,9 @@ export class SignatureComponent implements OnInit {
 
   private buildSignatureForm() {
     this.signatureForm = this.signatureFormBuilder.group({
-      apiKey: ['', [Validators.required]],
-      merchantId: ['', [Validators.required]],
-      referenceCode: ['', [Validators.required]],
+      apiKey: ['4Vj8eK4rloUd272L48hsrarnUA', [Validators.required]],
+      merchantId: ['508029', [Validators.required]],
+      referenceCode: ['reference-test-code', [Validators.required]],
       amount: ['', [Validators.required, Validators.pattern(this.pricePattern)]],
       currency: ['', [Validators.required]]
     })

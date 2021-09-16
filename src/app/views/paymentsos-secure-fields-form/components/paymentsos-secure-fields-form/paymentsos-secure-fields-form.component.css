@@ -1,4 +1,30 @@
-.checkout-page {
+.field {
+  text-align: -webkit-left;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  color: rgb(12, 43, 67);
+  border-radius: 4px;
+  padding: 1em 0 1em 0;
+  margin-bottom: 1.5em;
+}
+
+
+:host {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.secure-fields-form-div {
+  padding: 0.5em;
+  text-align: -webkit-center;
+}
+
+body {
+  background: whitesmoke;
+}
+
+mat-card {
   margin: 0 auto;
   max-width: 480px;
   background-color: #f5f5f7;
@@ -11,13 +37,53 @@
   place-content: center;
 }
 
-.field {
-  text-align: -webkit-left;
-  justify-content: space-between;
-  color: rgb(12, 43, 67);
-  height: 36px;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+mat-card-title {
+  font-size: xx-large;
+  color: skyblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+mat-card-header {
+  font-size: 50px;
+  font-family: Helvetica, Arial, sans-serif;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+  color: black;
+}
+
+::ng-deep .snackbar
+{
+  color:white;
+  background: skyblue !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+  span {
+    display: none;
+  }
+
+  form {
+    position: relative;
+    text-align: -webkit-center;
+  }
+
 }
 
 .btn {

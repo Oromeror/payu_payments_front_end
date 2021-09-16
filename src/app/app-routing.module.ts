@@ -19,7 +19,7 @@ const routes: Routes = [
       },
       {
         path: 'checkout',
-        loadChildren: () => import('./views/secure-fields-form/secure-fields-form.module').then(m => m.SecureFieldsFormModule)
+        loadChildren: () => import('./views/paymentsos-secure-fields-form/paymentsos-secure-fields-form.module').then(m => m.PaymentsosSecureFieldsFormModule)
       },
       {
         path: 'web-checkout',

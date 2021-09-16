@@ -11,8 +11,8 @@ export class HomeComponent implements OnInit {
   options: any[] = [];
 
   urls: { name: string, url: string }[] = [
-    { name: 'Simple Secure Fields Form - PaymentsOS', url: 'checkout/secure-fields-form' },
-    { name: 'Web Checkout - PayU', url: '/web-checkout' }
+    { name: 'Secure Fields Form - PaymentsOS', url: '/checkout/paymentsos-secure-fields-form' },
+    { name: 'WebCheckout - PayU', url: '/web-checkout' }
   ];
 
   constructor(

@@ -19,7 +19,7 @@
             placeholder="Buyer full name"
             name="buyerFullName"
             type="text"
-            value=""
+            value="John Doe"
             required
           />
           <mat-error>Buyer full name<strong> required.</strong> </mat-error>
@@ -34,7 +34,7 @@
             [pattern]="emailPattern"
             matInput
             type="email"
-            value=""
+            value="test@test.com"
           />
           <mat-icon matSuffix>email</mat-icon>
           <mat-error>Buyer email is <strong>required.</strong> </mat-error>
@@ -48,7 +48,7 @@
             required
             matInput
             type="text"
-            value=""
+            value="Cl. 99 #14-49"
           />
           <mat-error>Shipping address <strong>required.</strong> </mat-error>
         </mat-form-field>
@@ -61,7 +61,7 @@
             required
             matInput
             type="text"
-            value=""
+            value="bogotá"
           />
           <mat-error>Shipping city <strong>required.</strong> </mat-error>
         </mat-form-field>
@@ -74,7 +74,7 @@
             required
             matInput
             type="text"
-            value=""
+            value="Cl. 99 #14-49"
           />
           <mat-error>Billing address <strong>required.</strong> </mat-error>
         </mat-form-field>
@@ -87,7 +87,7 @@
             required
             matInput
             type="text"
-            value=""
+            value="bogotá"
           />
           <mat-error>Billing city <strong>required.</strong> </mat-error>
         </mat-form-field>
@@ -100,7 +100,7 @@
             required
             matInput
             type="text"
-            value=""
+            value="6540721"
           />
           <mat-error>Telephone <strong>required.</strong> </mat-error>
         </mat-form-field>
@@ -113,7 +113,7 @@
             required
             matInput
             type="text"
-            value=""
+            value="3155555555"
           />
           <mat-error>Mobile phone <strong>required.</strong> </mat-error>
         </mat-form-field>
@@ -129,7 +129,7 @@
             placeholder="Payer full name"
             name="payerFullName"
             type="text"
-            value=""
+            value="John Doe"
             required
           />
           <mat-error>
@@ -147,7 +147,7 @@
             [pattern]="emailPattern"
             matInput
             type="email"
-            value=""
+            value="test@test.com"
           />
           <mat-icon matSuffix>email</mat-icon>
           <mat-error>Payer email is <strong>required.</strong> </mat-error>
@@ -161,7 +161,7 @@
             required
             matInput
             type="text"
-            value=""
+            value="1234567890"
           />
           <mat-error>Document is <strong>required.</strong> </mat-error>
         </mat-form-field>
@@ -174,7 +174,7 @@
             required
             matInput
             type="text"
-            value=""
+            value="6540721"
           />
           <mat-error>Telephone <strong>required.</strong> </mat-error>
         </mat-form-field>
@@ -187,7 +187,7 @@
             required
             matInput
             type="text"
-            value=""
+            value="3155555555"
           />
           <mat-error>Mobile phone <strong>required.</strong> </mat-error>
         </mat-form-field>
@@ -203,7 +203,7 @@
             placeholder="Merchant id"
             name="merchantId"
             type="text"
-            value=""
+            value="508029"
             required
           />
           <mat-error> Merchant id is<strong> required.</strong> </mat-error>
@@ -216,7 +216,7 @@
             placeholder="Account id"
             name="accountId"
             type="text"
-            value=""
+            value="512321"
             required
           />
           <mat-error> Account id is <strong>required.</strong> </mat-error>
@@ -229,7 +229,7 @@
             placeholder="Description"
             name="description"
             type="text"
-            value=""
+            value="Test"
             required
           />
           <mat-error> Description is <strong>required.</strong> </mat-error>
@@ -242,7 +242,7 @@
             placeholder="Reference code"
             name="referenceCode"
             type="text"
-            value=""
+            value="reference-test-code"
             required
           />
           <mat-error> Reference code is <strong>required.</strong> </mat-error>
@@ -348,15 +348,15 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Test cards</mat-label>
+          <mat-label>Test mode</mat-label>
           <mat-select
             disableRipple
-            placeholder="Test cards"
+            placeholder="Test mode"
             name="test"
             type="number"
           >
-            <mat-option value="1">1: Enable test credit cards</mat-option>
-            <mat-option value="0">0: Disable test credit cards</mat-option>
+            <mat-option value="1">1: Enable test mode</mat-option>
+            <mat-option value="0">0: Disable test mode</mat-option>
           </mat-select>
           <mat-error>Test cards is <strong>required.</strong> </mat-error>
         </mat-form-field>

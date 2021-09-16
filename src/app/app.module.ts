@@ -10,6 +10,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material/material.module';
+import { PaymentsosSecureFieldsFormModule } from './views/paymentsos-secure-fields-form/paymentsos-secure-fields-form.module'
 import { WebCheckoutModule } from './views/web-checkout/web-checkout.module';
 import { WebCheckoutResponseModule } from './views/web-checkout-response/web-checkout-response.module';
 
@@ -27,6 +28,7 @@ import { WebCheckoutResponseModule } from './views/web-checkout-response/web-che
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
+    PaymentsosSecureFieldsFormModule,
     WebCheckoutModule,
     WebCheckoutResponseModule,
     MaterialModule
