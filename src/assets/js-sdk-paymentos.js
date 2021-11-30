@@ -71,8 +71,40 @@ function initPaymentsOsSecureFormFieldsJsSdk() {
   const cvv = formElements.create('cvv', { placeholders })
   cvv.mount('#cvv')
 
+  cardNumber.on('focus', (event) => {
+    console.log('focus: card number field was clicked')
+  })
+
+  cardNumber.on('change', (event) => {
+    console.log('change: card number field changed')
+  })
+
   cardNumber.on('blur', (event) => {
-    console.log(event)
+    console.log('blur: user left card number field', event)
+  })
+
+  expiry.on('focus', (event) => {
+    console.log('focus: expiry field was clicked')
+  })
+
+  expiry.on('change', (event) => {
+    console.log('change: expiry field changed')
+  })
+
+  expiry.on('blur', (event) => {
+    console.log('blur: user left expiry field')
+  })
+
+  cvv.on('focus', (event) => {
+    console.log('focus: cvv field was clicked')
+  })
+
+  cvv.on('change', (event) => {
+    console.log('change: cvv field changed')
+  })
+
+  cvv.on('blur', (event) => {
+    console.log('blur: user left cvv field')
   })
 
   /*

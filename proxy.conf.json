@@ -1,0 +1,7 @@
+{
+    "/api/*":{
+        "target": "https://api.paymentsos.com",
+        "secure": true,
+        "logLevel": "debug"
+    }
+}

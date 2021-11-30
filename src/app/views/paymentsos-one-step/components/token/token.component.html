@@ -1,0 +1,106 @@
+<div class="secure-fields-form-div">
+    <form
+    class="cc-form"
+    [formGroup]="tokenForm"
+    (ngSubmit)="createToken($event)">
+
+    <mat-card>
+
+        <mat-card-header>
+            <mat-card-title>Tokenize card</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Card holder name</mat-label>
+            <input
+            formControlName="cardHolderName"
+            class="input-empty"
+            placeholder="John Doe"
+            matInput
+            type="text"
+            />
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error> Card holder name is <strong> required.</strong> </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Document type</mat-label>
+            <mat-select
+            disableRipple
+            placeholder="Document type"
+            formControlName="documentType"
+            type="text"
+            >
+                <mat-option value="CC">Citizenship card.</mat-option>
+                <mat-option value="CE">Foreign citizenship card.</mat-option>
+                <mat-option value="NIT">Tax identification number (Companies).</mat-option>
+                <mat-option value="TI">Identity Card.</mat-option>
+                <mat-option value="PP">Passport.</mat-option>
+                <mat-option value="CEL">Mobile line.</mat-option>
+                <mat-option value="RC">Birth certificate.</mat-option>
+                <mat-option value="DE">Foreign identification document.</mat-option>
+            </mat-select>
+            <mat-error> Document type is<strong> required.</strong> </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Document number</mat-label>
+            <input
+            formControlName="documentNumber"
+            class="input-empty"
+            placeholder="Document number"
+            matInput
+            type="text"
+            />
+            <mat-error> Document number is <strong> required.</strong> </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="ngx-cc-form-field" appearance="outline">
+            <mat-label>Card number</mat-label>
+            <ngx-cc
+                name="cardNumber"
+                styleClass="card"
+                formControlName="creditCard">
+            </ngx-cc>
+            <mat-placeholder>0000 0000 0000 0000</mat-placeholder>
+            <mat-error> Card number is <strong> not valid.</strong> </mat-error>
+        </mat-form-field>
+        
+        <div class="cc-date-cvv-container">
+            <mat-form-field class="ngx-cc-form-field" appearance="outline">
+                <mat-label>MM / YY</mat-label>
+                <ngx-cc-date
+                    formControlName="creditCardDate">
+                </ngx-cc-date>
+                <mat-placeholder>MM / YY</mat-placeholder>
+                <mat-error> Expiration date is <strong> not valid.</strong> </mat-error>
+            </mat-form-field>
+            
+            <mat-form-field class="ngx-cc-form-field" appearance="outline">
+                <mat-label>CVV</mat-label>
+                <ngx-cc-cvv
+                    formControlName="creditCardCvv">
+                </ngx-cc-cvv>
+                <mat-placeholder>CVV</mat-placeholder>
+                <mat-error> Security code is <strong> not valid.</strong> </mat-error>
+            </mat-form-field>
+        </div>
+
+
+        <div class="btn-container">
+            <button 
+                [disabled]="tokenForm.invalid"
+                mat-raised-button
+                type="submit"
+            >
+                Add card
+            </button>
+        </div>
+
+        </mat-card-content>
+
+    </mat-card>
+    </form>
+</div>

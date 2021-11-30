@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url_web_checkout: 'https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/'
+  url_api: 'https://api.paymentsos.com'
 };
 /*
  * For easier debugging in development mode, you can import the following file

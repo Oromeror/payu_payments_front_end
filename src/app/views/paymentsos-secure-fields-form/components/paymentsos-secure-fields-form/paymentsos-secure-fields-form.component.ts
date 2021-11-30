@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {cardTokenModel} from "../../../../core/model/wc-cardtoken.model";
+import {cardTokenModel} from "../../../../core/model/secure-fields-form/wc-cardtoken.model";
 
 declare function initPaymentsOsSecureFormFieldsJsSdk(): void;
 

@@ -5,7 +5,7 @@ import { PaymentsosSecureFieldsFormComponent } from './components/paymentsos-sec
 
 const routes: Routes = [
   {
-  path: 'paymentsos-secure-fields-form',
+  path: 'secure-fields-form',
   component: PaymentsosSecureFieldsFormComponent
   }
 ];
