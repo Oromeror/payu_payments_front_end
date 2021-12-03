@@ -1,9 +1,10 @@
-<div class="secure-fields-form-div">
+<div class="cvv-form-div">
+  <iframe name="target" style="display: none"></iframe>
   <form
-    id="config-form"
-    [formGroup]="configurationForm"
-    (ngSubmit)="saveConfiguration($event)"
-	  [hidden]="configFormIsDisplayed"
+    id="token-form"
+    [formGroup]="paymentMethodTokenForm"
+    (ngSubmit)="saveToken($event)"
+    [hidden]="paymentMethodTokenFormIsDisplayed"
   >
     <mat-card>
       <mat-card-content>
@@ -35,16 +36,30 @@
           <mat-error> Public key is <strong> required.</strong> </mat-error>
         </mat-form-field>
 
+        <mat-form-field appearance="outline">
+          <mat-label>Payment method token</mat-label>
+          <input
+            id="token"
+            formControlName="paymentMethodToken"
+            class="input-empty"
+            placeholder="Token"
+            matInput
+            type="text"
+          />
+          <mat-icon matSuffix>credit_card</mat-icon>
+          <mat-error> Card token is <strong> required.</strong> </mat-error>
+        </mat-form-field>
+
         <mat-card-actions>
           <button
-            [disabled]="configurationForm.invalid"
+            [disabled]="paymentMethodTokenForm.invalid"
             class="btn"
-            id="save-config-btn"
+            id="save-token-btn"
             mat-raised-button
             type="submit"
-            (click)="showSecureFieldsForm()"
+            (click)="showCvvForm()"
           >
-            Load Secure Fields Form
+            Save token
           </button>
         </mat-card-actions>
       </mat-card-content>
@@ -52,60 +67,49 @@
   </form>
 
   <form
-    id="payment-form"
-    [formGroup]="secureFieldsForm"
-    (ngSubmit)="createToken($event)"
-    [hidden]="secureFieldsFormIsDisplayed"
+    id="cvv-form"
+    [formGroup]="cvvForm"
+    (ngSubmit)="saveCvv($event)"
+    [hidden]="cvvFormIsDisplayed"
   >
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Secure Fields Form</mat-card-title>
+        <mat-card-title>Collect the CVV Code</mat-card-title>
       </mat-card-header>
 
       <mat-card-content>
         <mat-form-field appearance="outline">
-          <mat-label>Card holder name</mat-label>
+          <mat-label>CVV</mat-label>
           <input
-            id="cardholder-name"
-            formControlName="cardholderName"
+            id="cvv"
             class="input-empty"
-            placeholder="John Doe"
+            formControlName="cvv"
+            placeholder="XXX"
             matInput
             type="text"
           />
-          <mat-icon matSuffix>person</mat-icon>
-          <mat-error>
-            Card holder name is <strong> required.</strong>
-          </mat-error>
+          <mat-error> Security code is <strong> required.</strong> </mat-error>
         </mat-form-field>
-
-        <div class="field">
-          <div id="card-number" class="input empty"></div>
-        </div>
-
-        <div class="field">
-          <div id="exp-date" class="input empty"></div>
-        </div>
-
-        <div class="field">
-          <div id="cvv" class="input empty"></div>
-        </div>
 
         <mat-card-actions>
           <button
-            [disabled]="secureFieldsForm.invalid"
+            [disabled]="cvvForm.invalid"
             class="btn"
-            id="pay_button"
+            id="cvv-btn"
             mat-raised-button
             type="submit"
           >
-              Add card
+            Pass cvv code
           </button>
         </mat-card-actions>
 
-		<div id="secure-fields-result" style="text-align:center;"></div>
-
+        <div id="token-result" style="text-align: center"></div>
       </mat-card-content>
     </mat-card>
   </form>
+
+  <script>
+    POS.setEnvironment("test"); // Set your environment
+    POS.setPublicKey("99346d84-5186-4221-9c16-dc51a8de27fb"); // Set your public key
+  </script>
 </div>

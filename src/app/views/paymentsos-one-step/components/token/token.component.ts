@@ -47,24 +47,23 @@ export class TokenComponent implements OnInit {
       const value = this.tokenForm.value;
       const newCard: Card = {
         card_number: value.creditCard,
-        expiration_date: value.creditCardDate,
+        expiration_date: value.creditCardDate.replace(/\s/g, ""),
         holder_name: value.cardHolderName,
         token_type: "credit_card",
-        identity_document: {
-          type: value.documentType,
-          number: value.documentNumber
-        }
+        identity_document_type:value.documentType,
+        identity_document_number: value.documentNumber
       }
-      this.tokenService.createToken(newCard, '', '', '').subscribe(
+      console.log(newCard.expiration_date)
+      this.tokenService.createToken(newCard, 'application/json', '1.3.0', 'test', 'com.universehorizons.sandbox_colombia', '0a0caea2-267b-448a-858e-2daa2a6d7fa3').subscribe(
         (response: any) => {
-          if (response.status_code === 201) {
-            console.log(response)
-            this.snackBar.open('Token generated successfully', 'close', { duration: 2000 });
+          console.log(response)
+          if (response.state === "created") {
+            this.snackBar.open('Token generated successfully', 'close', { duration: 5000 });
           } else {
-            this.snackBar.open('It was not possible to create the card token', 'close', { duration: 2000 });
+            this.snackBar.open('It was not possible to create the card token', 'close', { duration: 5000 });
           }
         },
-        (error: any) => { console.log(error); this.snackBar.open('Unexpected error.', 'close', { duration: 2000 }); }
+        (error: any) => { console.log(error); this.snackBar.open('Unexpected error.', 'close', { duration: 5000 }); }
       );
     }
   }

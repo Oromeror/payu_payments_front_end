@@ -2,7 +2,7 @@
   text-align: -webkit-left;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #d1c7c7;
   color: rgb(12, 43, 67);
   border-radius: 4px;
   padding: 1em 0 1em 0;
@@ -20,13 +20,13 @@
 }
 
 body {
-  background: whitesmoke;
+  background: white;
 }
 
 mat-card {
   margin: 0 auto;
   max-width: 480px;
-  background-color: #f5f5f7;
+  background-color: white;
   border: 1px solid #ddd;
   padding: 20px;
   display: block;
@@ -66,6 +66,11 @@ mat-form-field {
   color: black;
 }
 
+::ng-deep .mat-form-field .mat-form-field-infix {
+  padding: 1rem 0 0.2rem 0;
+  font-size: small;
+}
+
 ::ng-deep .snackbar {
   color: white;
   background: skyblue !important;
@@ -81,6 +86,7 @@ mat-form-field {
     text-align: -webkit-center;
   }
 }
+
 
 .btn {
   background: rgb(140, 197, 65); /* Old browsers */
@@ -122,4 +128,8 @@ mat-form-field {
 
 .input-empty {
   border-bottom: 10px;
+}
+
+div {
+  top: -1rem;
 }

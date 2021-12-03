@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url_web_checkout: 'https://checkout.payulatam.com/ppp-web-gateway-payu/'
+  url_api: 'https://api.paymentsos.com'
 };

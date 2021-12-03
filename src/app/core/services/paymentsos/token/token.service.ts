@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
 
@@ -14,16 +14,16 @@ export class TokenService {
     private http: HttpClient
   ) { }
 
-  createToken(token: Card, paymentsOsEnv: string, appId:string, privateKey:string) {
-    
-    const headers = new HttpHeaders()
-    .set('Content-Type', 'application/json')
-    .set('api-version', '1.3.0')
-    .set('x-payments-os-env', paymentsOsEnv)
-    .set('app-id', appId)
-    .set('private-key', privateKey)
+  createToken(token: Card, contentType: string, apiVersion: string, paymentsOsEnv: string, appId: string, publicKey: string) {
 
-    return this.http.post(`${environment.url_api}/tokens`, token, {headers});
+    const headers = new HttpHeaders()
+      .set('Content-Type', contentType)
+      .set('api-version', apiVersion)
+      .set('app-id', appId)
+      .set('public-key', publicKey)
+      .set('x-payments-os-env', paymentsOsEnv)
+
+    return this.http.post(`http://127.0.0.1:5000/api/payu-hub/tokens`, token, { headers });
   }
 
 }

@@ -12,41 +12,38 @@
 
         <mat-card-content>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Card holder name</mat-label>
+        <mat-form-field>
             <input
             formControlName="cardHolderName"
             class="input-empty"
-            placeholder="John Doe"
+            placeholder="Cardholder"
             matInput
             type="text"
             />
             <mat-icon matSuffix>person</mat-icon>
-            <mat-error> Card holder name is <strong> required.</strong> </mat-error>
+            <mat-error> Cardholder name is <strong> required.</strong> </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Document type</mat-label>
+        <mat-form-field>
             <mat-select
             disableRipple
             placeholder="Document type"
             formControlName="documentType"
             type="text"
             >
-                <mat-option value="CC">Citizenship card.</mat-option>
-                <mat-option value="CE">Foreign citizenship card.</mat-option>
-                <mat-option value="NIT">Tax identification number (Companies).</mat-option>
-                <mat-option value="TI">Identity Card.</mat-option>
-                <mat-option value="PP">Passport.</mat-option>
-                <mat-option value="CEL">Mobile line.</mat-option>
-                <mat-option value="RC">Birth certificate.</mat-option>
-                <mat-option value="DE">Foreign identification document.</mat-option>
+                <mat-option value="CC">Citizenship card</mat-option>
+                <mat-option value="CE">Foreign citizenship card</mat-option>
+                <mat-option value="NIT">Tax identification number (Companies)</mat-option>
+                <mat-option value="TI">Identity Card</mat-option>
+                <mat-option value="PP">Passport</mat-option>
+                <mat-option value="CEL">Mobile line</mat-option>
+                <mat-option value="RC">Birth certificate</mat-option>
+                <mat-option value="DE">Foreign identification document</mat-option>
             </mat-select>
             <mat-error> Document type is<strong> required.</strong> </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Document number</mat-label>
+        <mat-form-field>
             <input
             formControlName="documentNumber"
             class="input-empty"
@@ -57,8 +54,7 @@
             <mat-error> Document number is <strong> required.</strong> </mat-error>
         </mat-form-field>
 
-        <mat-form-field class="ngx-cc-form-field" appearance="outline">
-            <mat-label>Card number</mat-label>
+        <mat-form-field class="ngx-cc-form-field">
             <ngx-cc
                 name="cardNumber"
                 styleClass="card"
@@ -69,8 +65,7 @@
         </mat-form-field>
         
         <div class="cc-date-cvv-container">
-            <mat-form-field class="ngx-cc-form-field" appearance="outline">
-                <mat-label>MM / YY</mat-label>
+            <mat-form-field class="ngx-cc-form-field">
                 <ngx-cc-date
                     formControlName="creditCardDate">
                 </ngx-cc-date>
@@ -78,8 +73,7 @@
                 <mat-error> Expiration date is <strong> not valid.</strong> </mat-error>
             </mat-form-field>
             
-            <mat-form-field class="ngx-cc-form-field" appearance="outline">
-                <mat-label>CVV</mat-label>
+            <mat-form-field class="ngx-cc-form-field">
                 <ngx-cc-cvv
                     formControlName="creditCardCvv">
                 </ngx-cc-cvv>
@@ -88,16 +82,16 @@
             </mat-form-field>
         </div>
 
-
-        <div class="btn-container">
-            <button 
-                [disabled]="tokenForm.invalid"
-                mat-raised-button
-                type="submit"
+        <mat-card-actions>
+            <button
+              [disabled]="tokenForm.invalid"
+              class="btn"
+              mat-raised-button
+              type="submit"
             >
-                Add card
+              Tokenize card
             </button>
-        </div>
+          </mat-card-actions>
 
         </mat-card-content>
 

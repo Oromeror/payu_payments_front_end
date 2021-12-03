@@ -22,6 +22,10 @@ const routes: Routes = [
         loadChildren: () => import('./views/paymentsos-secure-fields-form/paymentsos-secure-fields-form.module').then(m => m.PaymentsosSecureFieldsFormModule)
       },
       {
+        path: 'cvv-encrypter',
+        loadChildren: () => import('./views/paymentsos-collect-cvv-code/paymentsos-collect-cvv-code.module').then(m => m.PaymentsosCollectCvvCodeModule)
+      },
+      {
         path: 'checkout-one-step',
         loadChildren: () => import('./views/paymentsos-one-step/paymentsos-one-step-routing.module').then(m => m.PaymentsosOneStepRoutingModule)
       },

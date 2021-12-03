@@ -116,19 +116,19 @@ mat-list {
     word-break: break-word;
     width: 50vw;
     color: black;
-  }
+}
 
 .mat-list-item mat-focus-indicator ng-star-inserted {
 
-  height: fit-content;
+height: fit-content;
 }
 
 .mat-list-item-content{
-  height: min-content;
+height: min-content;
 }
 
 .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
-  height: fit-content;
-  padding-top: 2%;
-  padding-bottom: 2%;
+    height: fit-content;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }

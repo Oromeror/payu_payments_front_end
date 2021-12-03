@@ -31,7 +31,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js-sdk-paymentos.js"
+              "src/assets/paymentsos-secure-fields-sdk.js",
+              "src/assets/paymentsos-cvv-encryptor-sdk.js"
             ]
           },
           "configurations": {

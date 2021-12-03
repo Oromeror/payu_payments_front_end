@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   urls: { name: string, url: string }[] = [
     { name: 'PaymentsOs Secure Fields Form', url: '/add-card/secure-fields-form' },
+    { name: 'PaymentsOs reuse card info - collect cvv code', url: '/cvv-encrypter/collect-cvv-code' },
     { name: 'PaymentsOs payments in one step', url: '/checkout-one-step' },
     { name: 'PayU WebCheckout', url: '/web-checkout' }
   ];

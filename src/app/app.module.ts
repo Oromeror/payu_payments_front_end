@@ -11,15 +11,15 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PaymentsosSecureFieldsFormModule } from './views/paymentsos-secure-fields-form/paymentsos-secure-fields-form.module'
+import { PaymentsosCollectCvvCodeModule } from './views/paymentsos-collect-cvv-code/paymentsos-collect-cvv-code.module';
 import { PaymentsosOneStepModule } from './views/paymentsos-one-step/paymentsos-one-step.module'
 import { WebCheckoutModule } from './views/web-checkout/web-checkout.module';
 import { WebCheckoutResponseModule } from './views/web-checkout-response/web-checkout-response.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
+    LayoutComponent
   ],
   imports: [
     AppRoutingModule,
@@ -31,6 +31,7 @@ import { WebCheckoutResponseModule } from './views/web-checkout-response/web-che
     FormsModule,
     BrowserAnimationsModule,
     PaymentsosSecureFieldsFormModule,
+    PaymentsosCollectCvvCodeModule,
     PaymentsosOneStepModule,
     WebCheckoutModule,
     WebCheckoutResponseModule

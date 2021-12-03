@@ -3,8 +3,6 @@ export interface Card {
     "expiration_date": string,
     "holder_name": string,
     "token_type": string,
-    "identity_document": {
-        "type": string,
-        "number": string
-    }
+    "identity_document_type": string,
+    "identity_document_number": string
 }
