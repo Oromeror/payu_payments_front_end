@@ -15,8 +15,8 @@ export class TokenComponent implements OnInit {
 
 
   tokenForm: FormGroup;
-  documents: { iso: string, description: string }[] = [];
   submitted: boolean = false;
+  tokenResponse: any;
 
 
   constructor(
@@ -58,6 +58,7 @@ export class TokenComponent implements OnInit {
         (response: any) => {
           console.log(response)
           if (response.state === "created") {
+            this.tokenResponse = response;
             this.snackBar.open('Token generated successfully', 'close', { duration: 5000 });
           } else {
             this.snackBar.open('It was not possible to create the card token', 'close', { duration: 5000 });

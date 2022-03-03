@@ -15,11 +15,12 @@ import { PaymentsosCollectCvvCodeModule } from './views/paymentsos-collect-cvv-c
 import { PaymentsosOneStepModule } from './views/paymentsos-one-step/paymentsos-one-step.module'
 import { WebCheckoutModule } from './views/web-checkout/web-checkout.module';
 import { WebCheckoutResponseModule } from './views/web-checkout-response/web-checkout-response.module';
+import { GenericResponsePageModule } from './views/generic-response-page/generic-response-page.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -34,7 +35,8 @@ import { WebCheckoutResponseModule } from './views/web-checkout-response/web-che
     PaymentsosCollectCvvCodeModule,
     PaymentsosOneStepModule,
     WebCheckoutModule,
-    WebCheckoutResponseModule
+    WebCheckoutResponseModule,
+    GenericResponsePageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

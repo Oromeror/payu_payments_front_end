@@ -1,5 +1,5 @@
 var environment;
-var publicKey;
+var publicKey; 
 var formElements;
 const fonts = [{src: 'https://fonts.googleapis.com/css?family=Source+Code+Pro'}]
 const placeholders = { cardNumber: "0000 0000 0000 0000", expDate: "MM / YY", cvv: "XXX" };

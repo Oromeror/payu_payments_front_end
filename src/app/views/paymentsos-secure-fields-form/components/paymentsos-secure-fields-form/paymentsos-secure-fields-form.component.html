@@ -72,6 +72,7 @@
             placeholder="John Doe"
             matInput
             type="text"
+            onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
           />
           <mat-icon matSuffix>person</mat-icon>
           <mat-error>

@@ -1,4 +1,4 @@
-<div class="secure-fields-form-div">
+<div class="create-token-form-div">
     <form
     class="cc-form"
     [formGroup]="tokenForm"
@@ -81,6 +81,8 @@
                 <mat-error> Security code is <strong> not valid.</strong> </mat-error>
             </mat-form-field>
         </div>
+
+        <div>{{tokenResponse | json }}</div>
 
         <mat-card-actions>
             <button

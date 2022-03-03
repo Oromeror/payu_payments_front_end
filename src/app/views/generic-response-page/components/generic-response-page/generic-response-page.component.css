@@ -1,0 +1,14 @@
+.mat-card-header {
+    text-decoration-line: underline;
+    text-underline-position: under;
+}
+
+.mat-card-content {
+    text-align: -webkit-center;
+}
+
+div {
+    outline: auto;
+    margin: 2em;
+    padding: 2em;
+}

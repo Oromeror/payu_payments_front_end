@@ -1,1 +1,79 @@
-<p>payment works!</p>
+<div class="create-payment-form-div">
+  <form
+    class="cc-form"
+    [formGroup]="paymentForm"
+    (ngSubmit)="createPayment($event)"
+  >
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Create Payment</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+          <mat-label>Amount</mat-label>
+          <input
+            matInput
+            placeholder="Amount"
+            name="amount"
+            [pattern]="pricePattern"
+            required
+            type="number"
+            value="0"
+            min="0"
+          />
+          <span class="currency-icon" matPrefix>$&nbsp;</span>
+          <mat-error> ¡The amount mus be <strong>valid.</strong>! </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-select
+            disableRipple
+            placeholder="Currency"
+            formControlName="currency"
+            type="text"
+          >
+            <mat-option value="ARS">ARS</mat-option>
+            <mat-option value="BRL">BRL</mat-option>
+            <mat-option value="CLP">CLP</mat-option>
+            <mat-option value="COP">COP</mat-option>
+            <mat-option value="MXN">MXN</mat-option>
+            <mat-option value="USD">USD</mat-option>
+            <mat-option value="PEN">PEN</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>attach_money</mat-icon>
+          <mat-error> Currency is <strong> required.</strong> </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Payment description</mat-label>
+          <input
+            matInput
+            placeholder="Payment description"
+            name="description"
+            type="text"
+            required
+          />
+          <mat-error> Payment description is <strong>required.</strong> </mat-error>
+        </mat-form-field>
+
+        <mat-card-subtitle> Buyer Fields </mat-card-subtitle>
+
+        <mat-card-subtitle> Payer Fields </mat-card-subtitle>
+
+        <div>{{ paymentResponse | json }}</div>
+
+        <mat-card-actions>
+          <button
+            [disabled]="paymentForm.invalid"
+            class="btn"
+            mat-raised-button
+            type="submit"
+          >
+            Create payment
+          </button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>

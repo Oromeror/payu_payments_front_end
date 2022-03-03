@@ -36,6 +36,10 @@ const routes: Routes = [
       {
         path: 'web-checkout-response',
         loadChildren: () => import('./views/web-checkout-response/web-checkout-response.module').then(m => m.WebCheckoutResponseModule)
+      },
+      {
+        path: 'generic-response-page',
+        loadChildren: () => import('./views/generic-response-page/generic-response-page.module').then(m => m.GenericResponsePageModule)
       }
     ]
   },
