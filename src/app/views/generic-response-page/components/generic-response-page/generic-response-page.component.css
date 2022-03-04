@@ -1,57 +1,92 @@
 :host {
-    justify-content: center;
-    align-items: flex-start;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .mat-card {
-    margin: 0 auto;
-    max-width: 480px;
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 20px;
-    display: block;
-    width: 80%;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    place-content: center;
+  margin: 10px auto;
+  max-width: 800px;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  display: block;
+  width: 80%;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  place-content: center;
 }
 
 .mat-card-header {
-    font-size: 50px;
-    font-family: Helvetica, Arial, sans-serif;
-    height: 5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  font-size: 50px;
+  font-family: Helvetica, Arial, sans-serif;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .mat-card-title {
-    font-size: x-large;
-    color: skyblue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: -webkit-center;
+  font-size: x-large;
+  color: skyblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: -webkit-center;
 }
 
 .mat-card-subtitle {
-    text-align: -webkit-center;
+  text-align: -webkit-center;
 }
 
 .mat-card-content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-div {
-    width: 90%;
-    padding: 0.5em;
-    color: black;
-    outline: auto;
-    position: relative;
-    overflow-wrap: break-word;
-    background: whitesmoke;
+.mat-header-cell {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.mat-table {
+  margin: 0 auto;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding: 19px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+table {
+  width: 100%;
+  line-break: anywhere;
+}
+
+thead {
+  width: 100%;
+  margin: 0 auto;
+}
+
+tbody {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mat-cell {
+  margin: 0 auto;
+}
+
+.mat-cell .cdk-cell .cdk-column-value .mat-column-value {
+  margin: 0 auto;
+}
+
+.strong {
+  text-size-adjust: 10px;
+}
+
+.param {
+  font-weight: bold;
 }

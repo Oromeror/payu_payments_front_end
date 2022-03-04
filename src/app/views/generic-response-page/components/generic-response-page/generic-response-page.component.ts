@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { MatTableDataSource } from '@angular/material/table';
+import { ResponsePage } from 'src/app/core/model/response-page/response-page.model';
+
+
 @Component({
   selector: 'app-generic-response-page',
   templateUrl: './generic-response-page.component.html',
@@ -8,8 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GenericResponsePageComponent implements OnInit {
 
-  queryParams: string;
-  data: string;
+  displayedColumns: string[] = ['parameter', 'value'];
+  responsePage: ResponsePage[] = []
+  dataSource: MatTableDataSource<ResponsePage>;
+
 
   constructor(private activatedRoute: ActivatedRoute) { // what child routes are being loaded right now?
     const childRouteSnapshots = activatedRoute.snapshot.children;
@@ -26,6 +32,7 @@ export class GenericResponsePageComponent implements OnInit {
     // I have multiple router outlets. Is this using the correct router outlet?
     const outletName = activatedRoute.snapshot.outlet;
     console.log('CURRENT ROUTER OUTLET NAME: ', outletName);
+
   }
 
   ngOnInit(): void {
@@ -34,7 +41,10 @@ export class GenericResponsePageComponent implements OnInit {
 
   private getQueryParams() {
     const params = this.activatedRoute.snapshot.queryParams;
-    const str = JSON.stringify(params)
-    this.queryParams = str;
+    const map = new Map(Object.entries(params));
+    for (let [key, value] of map) {
+      this.responsePage.push({ key: key, value: value })
+    }
+    this.dataSource = new MatTableDataSource(this.responsePage)
   }
 }
