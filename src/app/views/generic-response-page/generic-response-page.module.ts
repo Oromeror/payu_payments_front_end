@@ -4,12 +4,20 @@ import { MaterialModule } from '../../material/material.module';
 import { SharedModule } from '../../shared/shared.module';
 
 import { GenericResponsePageRoutingModule } from './generic-response-page-routing.module';
-import { GenericResponsePageComponent } from './components/generic-response-page/generic-response-page.component';
+import { QueryParamsComponent } from './components/query-params/query-params.component';
+import { ReponsePageComponent } from './reponse-page/reponse-page.component';
+import { ResponseHeadersComponent } from './components/response-headers/response-headers.component';
+import { RequestHeadersComponent } from './components/request-headers/request-headers.component';
+import { GeneralComponent } from './components/general/general.component';
 
 
 @NgModule({
   declarations: [
-    GenericResponsePageComponent
+    QueryParamsComponent,
+    ReponsePageComponent,
+    ResponseHeadersComponent,
+    RequestHeadersComponent,
+    GeneralComponent
   ],
   imports: [
     CommonModule,

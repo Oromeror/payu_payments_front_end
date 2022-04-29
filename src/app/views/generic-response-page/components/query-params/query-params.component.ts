@@ -4,20 +4,21 @@ import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { ResponsePage } from 'src/app/core/model/response-page/response-page.model';
 
-
 @Component({
-  selector: 'app-generic-response-page',
-  templateUrl: './generic-response-page.component.html',
-  styleUrls: ['./generic-response-page.component.css']
+  selector: 'app-query-params',
+  templateUrl: './query-params.component.html',
+  styleUrls: ['./query-params.component.css']
 })
-export class GenericResponsePageComponent implements OnInit {
+export class QueryParamsComponent implements OnInit {
 
   displayedColumns: string[] = ['parameter', 'value'];
   responsePage: ResponsePage[] = []
   dataSource: MatTableDataSource<ResponsePage>;
 
 
-  constructor(private activatedRoute: ActivatedRoute) { // what child routes are being loaded right now?
+  constructor(private activatedRoute: ActivatedRoute) {
+    
+    // what child routes are being loaded right now?
     const childRouteSnapshots = activatedRoute.snapshot.children;
     console.log('CHILDREN SNAPSHOTS: ', childRouteSnapshots);
 
@@ -47,4 +48,5 @@ export class GenericResponsePageComponent implements OnInit {
     }
     this.dataSource = new MatTableDataSource(this.responsePage)
   }
+
 }

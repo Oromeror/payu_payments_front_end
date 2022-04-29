@@ -1,0 +1,53 @@
+:host {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+div {
+  padding: 10px;
+}
+
+.mat-card {
+    margin: 10px auto;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    display: block;
+    width: 80%;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    place-content: center;
+  }
+  
+  .mat-card-header {
+    font-size: 50px;
+    font-family: Helvetica, Arial, sans-serif;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .mat-card-title {
+    font-size: x-large;
+    color: skyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: -webkit-center;
+  }
+
+.action-buttons {
+  text-align: right;
+  box-shadow: 0 1px 0px rgb(0 0 0 / 10%);
+}
+
+.general-panel {
+  padding-bottom: 20px;
+  padding: 10px 25px 10px 25px;
+}
+
+::ng-deep .general-panel .mat-expansion-panel-body {
+    padding: 20px 5px 20px;
+}

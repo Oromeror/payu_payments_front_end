@@ -1,0 +1,78 @@
+.mat-expansion-panel-header,
+.mat-expansion-panel-content {
+  padding: 15px;
+  background: linear-gradient(90deg, rgb(65, 65, 65), transparent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mat-expansion-panel-header.mat-expanded:focus,
+.mat-expansion-panel-header.mat-expanded:hover {
+  background: linear-gradient(90deg, rgb(65, 65, 65), transparent);
+}
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled="true"])
+  .mat-expansion-panel-header:hover {
+  background: linear-gradient(90deg, rgb(65, 65, 65), transparent);
+}
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled="false"])
+  .mat-expansion-panel-header::content {
+  background: linear-gradient(90deg, #517484, transparent);
+}
+
+.mat-expansion-panel-header-title {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mat-expansion-panel-header-description {
+  flex-basis: 0;
+  flex-grow: 0.2;
+  color: #000000;
+  justify-content: right;
+  align-items: center;
+}
+
+table {
+  margin: 0 auto;
+  width: 100%;
+  line-break: anywhere;
+  text-align-last: center;
+}
+
+thead {
+  width: 100%;
+  margin: 0 auto;
+}
+
+tbody {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mat-table {
+  margin: 0 auto;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding: 19px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.mat-cell .cdk-cell .cdk-column-value .mat-column-value {
+  margin: 0 auto;
+}
+
+.strong {
+  text-size-adjust: 10px;
+}
+
+.param {
+  font-weight: bold;
+}

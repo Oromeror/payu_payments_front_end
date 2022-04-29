@@ -8,6 +8,21 @@ This repository is based on the implementation of a simple API for the PayU [Web
 
 ## Installation
 
+- Create a [virtual environment](https://pypi.org/project/nodeenv/) with the command
+    #### Local installation
+    Linux/Mac 
+    ```virtualenv venv```
+
+- Activate the virtual environment:
+
+    Linux/Mac ```. venv/bin/activate``` and `deactivate` to exit
+
+    It should appear (venv) in the console. Whenever a new console is executed, the virtual machine has a libraries and dependencies other than those found in the normal Windows environment, this to maintain the integrity of the applications in the operating system.
+
+- Install nodeenv
+
+    Linux/Mac ```pip install nodeenv```
+
 - download packages and it's dependencies
 
     `npm install`

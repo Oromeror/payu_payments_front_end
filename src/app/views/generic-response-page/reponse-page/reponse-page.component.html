@@ -1,0 +1,21 @@
+<div class="response-grid">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Response page</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="action-buttons">
+        <button mat-button (click)="accordion.openAll()">Expand</button>
+        <button mat-button (click)="accordion.closeAll()">Collapse</button>
+      </div>
+
+      <mat-accordion class="general-panel" multi>
+        <app-query-params></app-query-params><br />
+        <app-request-headers></app-request-headers><br />
+        <app-response-headers></app-response-headers><br />
+        <app-general></app-general><br />
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+</div>
