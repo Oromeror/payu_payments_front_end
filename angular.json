@@ -31,8 +31,9 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/paymentsos-secure-fields-sdk.js",
-              "src/assets/paymentsos-cvv-encryptor-sdk.js"
+              "src/assets/payu-hub-secure-fields-form.js",
+              "src/assets/payu-hub-javascript-api.js",
+              "src/assets/payu-hub-secure-cvv-form.js"
             ]
           },
           "configurations": {

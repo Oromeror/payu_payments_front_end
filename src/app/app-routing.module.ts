@@ -18,20 +18,24 @@ const routes: Routes = [
         loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule)
       },
       {
-        path: 'add-card',
-        loadChildren: () => import('./views/paymentsos-secure-fields-form/paymentsos-secure-fields-form.module').then(m => m.PaymentsosSecureFieldsFormModule)
+        path: 'integrations',
+        loadChildren: () => import('./views/payu-latam-webcheckout/payu-latam-webcheckout-routing.module').then(m => m.PayuLatamWebcheckoutRoutingModule)
       },
       {
-        path: 'cvv-encrypter',
-        loadChildren: () => import('./views/paymentsos-collect-cvv-code/paymentsos-collect-cvv-code.module').then(m => m.PaymentsosCollectCvvCodeModule)
+        path: 'integrations',
+        loadChildren: () => import('./views/payu-hub-secure-fields-form/payu-hub-secure-fields-form.module').then(m => m.PayuHubSecureFieldsFormModule)
+      },
+      {
+        path: 'integrations',
+        loadChildren: () => import('./views/payu-hub-javascript-api/payu-hub-javascript-api.module').then(m => m.PayuHubJavascriptApiModule)
+      },
+      {
+        path: 'integrations',
+        loadChildren: () => import('./views/payu-hub-secure-cvv-form/payu-hub-secure-cvv-form.module').then(m => m.PayuHubSecureCvvFormModule)
       },
       {
         path: 'checkout-one-step',
         loadChildren: () => import('./views/paymentsos-one-step/paymentsos-one-step-routing.module').then(m => m.PaymentsosOneStepRoutingModule)
-      },
-      {
-        path: 'web-checkout',
-        loadChildren: () => import('./views/web-checkout/web-checkout-routing.module').then(m => m.WebCheckoutRoutingModule)
       },
       {
         path: 'web-checkout-response',
@@ -39,7 +43,7 @@ const routes: Routes = [
       },
       {
         path: 'generic-response-page',
-        loadChildren: () => import('./views/generic-response-page/generic-response-page.module').then(m => m.GenericResponsePageModule)
+        loadChildren: () => import('./views/payu-generic-response-page/payu-generic-response-page.module').then(m => m.PayuGenericResponsePageModule)
       }
     ]
   },

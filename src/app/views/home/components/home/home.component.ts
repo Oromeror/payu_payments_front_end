@@ -11,12 +11,13 @@ export class HomeComponent implements OnInit {
   options: any[] = [];
 
   urls: { name: string, url: string }[] = [
-    { name: 'PaymentsOs Secure Fields Form', url: '/add-card/secure-fields-form' },
-    { name: 'PaymentsOs reuse card info - collect cvv code', url: '/cvv-encrypter/collect-cvv-code' },
-    { name: 'PaymentsOs payments in one step', url: '/checkout-one-step' },
-    { name: 'PayU WebCheckout', url: '/web-checkout' }
+    { name: 'PayU Latam - WebCheckout', url: '/integrations/payu-latam-webcheckout' },
+    { name: 'PayU Hub - Secure Fields Form', url: '/integrations/payu-hub-secure-fields-form' },
+    { name: 'PayU Hub - Javascript API', url: '/integrations/payu-hub-javascript-api' },
+    { name: 'PayU Hub - Secure CVV Form', url: '/integrations/payu-hub-secure-cvv-form' },
+    //{ name: 'PayU Hub - Payments API - Charge', url: '/checkout-one-step' }
   ];
-
+  
   constructor(
     private router: Router
   ) { }

@@ -1,0 +1,113 @@
+<div class="secure-fields-form-div">
+    <form
+      id="config-form"
+      [formGroup]="configurationForm"
+      (ngSubmit)="saveConfiguration($event)"
+        [hidden]="configFormIsDisplayed"
+    >
+      <mat-card>
+        <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Environment</mat-label>
+            <mat-select
+              id="environment"
+              disableRipple
+              placeholder="Environment"
+              formControlName="environment"
+              type="text"
+              value="test"
+            >
+              <mat-option value="test">Test</mat-option>
+            </mat-select>
+            <mat-error> Environment is<strong> required.</strong> </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Public key</mat-label>
+            <input
+              id="public-key"
+              formControlName="publicKey"
+              class="input-empty"
+              placeholder="Public key"
+              matInput
+              type="text"
+            />
+            <mat-error> Public key is <strong> required.</strong> </mat-error>
+          </mat-form-field>
+  
+          <mat-card-actions>
+            <button
+              [disabled]="configurationForm.invalid"
+              class="btn"
+              id="save-config-btn"
+              mat-raised-button
+              type="submit"
+              (click)="showSecureFieldsForm()"
+            >
+              Load Secure Fields Form
+            </button>
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  
+    <form
+      id="payment-form"
+      [formGroup]="secureFieldsForm"
+      (ngSubmit)="createToken($event)"
+      [hidden]="secureFieldsFormIsDisplayed"
+    >
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Secure Fields Form</mat-card-title>
+        </mat-card-header>
+  
+        <mat-card-content>
+          <mat-form-field appearance="outline">
+            <mat-label>Card holder name</mat-label>
+            <input
+              id="cardholder-name"
+              formControlName="cardholderName"
+              class="input-empty"
+              placeholder="John Doe"
+              matInput
+              type="text"
+              onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+            />
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error>
+              Card holder name is <strong> required.</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <div class="field">
+            <div id="card-number" class="input empty"></div>
+          </div>
+  
+          <div class="field">
+            <div id="exp-date" class="input empty"></div>
+          </div>
+  
+          <div class="field">
+            <div id="cvv" class="input empty"></div>
+          </div>
+  
+          <mat-card-actions>
+            <button
+              [disabled]="secureFieldsForm.invalid"
+              class="btn"
+              id="pay_button"
+              mat-raised-button
+              type="submit"
+            >
+                Add card
+            </button>
+          </mat-card-actions>
+  
+          <div id="secure-fields-result" style="text-align:center;"></div>
+  
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+  

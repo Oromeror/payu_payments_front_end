@@ -1,0 +1,187 @@
+<div class="javascript-api-form-div">
+  <iframe name="target" style="display: none"></iframe>
+  <form
+    id="credentials-form"
+    [formGroup]="credentialsForm"
+    (ngSubmit)="saveCredentials($event)"
+    [hidden]="credentialsFormIsDisplayed"
+  >
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+          <mat-label>Environment</mat-label>
+          <mat-select
+            id="environment"
+            disableRipple
+            placeholder="Environment"
+            formControlName="environment"
+            type="text"
+            value="test"
+          >
+            <mat-option value="test">Test</mat-option>
+          </mat-select>
+          <mat-error> Environment is<strong> required.</strong> </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Public key</mat-label>
+          <input
+            id="public-key"
+            formControlName="publicKey"
+            class="input-empty"
+            placeholder="Public key"
+            matInput
+            type="text"
+          />
+          <mat-error> Public key is <strong> required.</strong> </mat-error>
+        </mat-form-field>
+
+        <mat-card-actions>
+          <button
+            [disabled]="credentialsForm.invalid"
+            class="btn"
+            id="save-token-btn"
+            mat-raised-button
+            type="submit"
+            (click)="showJavascriptApiForm()"
+          >
+            Save Credentials
+          </button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </form>
+
+  <form
+    id="jsapi-form"
+    [formGroup]="javascriptApiForm"
+    (ngSubmit)="generateToken($event)"
+    [hidden]="javascriptApiFormIsDisplayed"
+  >
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Generate Credit Card Token</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <mat-form-field>
+          <mat-select
+          id="token-type"
+          disableRipple
+          placeholder="Token type"
+          formControlName="tokenType"
+          type="text"
+          value="credit_card"
+          >
+              <mat-option value="credit_card">Credit card</mat-option>
+          </mat-select>
+          <mat-error>Token type is<strong> required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+        id="card-holder"
+        formControlName="cardHolderName"
+        class="input-empty"
+        placeholder="Cardholder"
+        matInput
+        type="text"
+        />
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error> Cardholder name is <strong> required.</strong> </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+      <!--<mat-form-field class="ngx-cc-form-field">-->
+        <input
+        id="card-number"
+        formControlName="creditCard"
+        class="input-empty"
+        matInput
+        type="number"
+        />
+        <!--
+        <ngx-cc
+            id="card-number"
+            name="cardNumber"
+            styleClass="card"
+            formControlName="creditCard">
+        </ngx-cc>
+        -->
+        <mat-placeholder>0000 0000 0000 0000</mat-placeholder>
+        <mat-error> Card number is <strong> not valid.</strong> </mat-error>
+      </mat-form-field>
+
+      <!-- <div class="cc-date-cvv-container"> -->
+        <mat-form-field>
+        <!-- <mat-form-field class="ngx-cc-form-field">-->
+          <input
+          id="card-expdate"
+          formControlName="creditCardDate"
+          class="input-empty"
+          matInput
+          type="text"
+          />
+            <!--
+              <ngx-cc-date
+                id="expiration-date"
+                formControlName="creditCardDate">
+            </ngx-cc-date>
+            -->
+            <mat-placeholder>MM-YYYY</mat-placeholder>
+            <mat-error> Expiration date is <strong> not valid.</strong> </mat-error>
+        </mat-form-field>
+      <!--  </div> -->
+
+      <mat-form-field>
+        <input
+        id="document-number"
+        formControlName="documentNumber"
+        class="input-empty"
+        placeholder="Document number"
+        matInput
+        type="text"
+        />
+        <mat-error> Document number is <strong> required.</strong> </mat-error>
+      </mat-form-field>
+
+     <!--<mat-form-field>
+        <mat-select
+        id="document-type"
+        disableRipple
+        placeholder="Document type"
+        formControlName="documentType"
+        type="text"
+        >
+            <mat-option value="CC">Citizenship card</mat-option>
+            <mat-option value="CE">Foreign citizenship card</mat-option>
+            <mat-option value="NIT">Tax identification number (Companies)</mat-option>
+            <mat-option value="TI">Identity Card</mat-option>
+            <mat-option value="PP">Passport</mat-option>
+            <mat-option value="CEL">Mobile line</mat-option>
+            <mat-option value="RC">Birth certificate</mat-option>
+            <mat-option value="DE">Foreign identification document</mat-option>
+        </mat-select>
+        <mat-error> Document type is<strong> required.</strong> </mat-error>
+      </mat-form-field>
+      -->
+
+      <mat-card-actions>
+        <button
+          [disabled]="javascriptApiForm.invalid"
+          class="btn"
+          id="token-btn"
+          mat-raised-button
+          type="submit"
+        >
+          Generate Token
+        </button>
+      </mat-card-actions>
+
+      <div id="token-result" style="text-align: center"></div>
+
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>  
